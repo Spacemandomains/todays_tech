@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Today’s Tech | Archive</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBg: "#e2ffff",
+            brandDark: "#0f3d3e",
+            brandDeep: "#002627",
+            brandTeal: "#276769",
+            brandOrange: "#ff7a22",
+            brandOrangeSoft: "#ffdbca",
+            brandCream: "#ffffff",
+            brandText: "#002020",
+            brandMuted: "#404848",
+            brandCard: "#cffcfd",
+            brandCard2: "#caf6f7",
+            brandBorder: "#c0c8c8"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background: #e2ffff;
+      color: #002020;
+    }
+
+    .glass-nav {
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(20px);
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+
+    .article-card img {
+      transition: transform 0.5s ease;
+    }
+
+    .article-card:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-brandBg text-brandText">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-brandBorder/50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-black tracking-tight text-brandDark">Today’s Tech</a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="archive.html" class="text-sm font-bold uppercase tracking-wide text-brandDeep">Archive</a>
+        <a href="archive.html#ai" class="text-sm font-bold uppercase tracking-wide text-brandTeal hover:text-brandDark">AI</a>
+        <a href="archive.html#startups" class="text-sm font-bold uppercase tracking-wide text-brandTeal hover:text-brandDark">Startups</a>
+        <a href="archive.html#commerce" class="text-sm font-bold uppercase tracking-wide text-brandTeal hover:text-brandDark">Agentic Commerce</a>
+        <a href="archive.html#opinion" class="text-sm font-bold uppercase tracking-wide text-brandTeal hover:text-brandDark">Opinion</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button class="p-2 rounded-full hover:bg-brandOrangeSoft text-brandDark" aria-label="Search">
+          <span class="material-symbols-outlined">search</span>
+        </button>
+        <a href="index.html#newsletter" class="hidden lg:inline-flex px-5 py-2 rounded-lg bg-brandOrangeSoft text-[#341100] font-bold text-sm uppercase tracking-wide hover:bg-[#ffb690]">
+          Subscribe
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-32 pb-24 px-6 lg:px-8 max-w-7xl mx-auto">
+
+    <!-- HEADER -->
+    <header class="mb-16">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+        <div class="max-w-3xl">
+          <span class="block text-brandOrange text-sm font-bold uppercase tracking-[0.2em] mb-4">
+            The Digital Curator
+          </span>
+          <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-none text-brandDeep">
+            Archive
+          </h1>
+          <p class="mt-6 text-lg text-brandMuted max-w-2xl leading-relaxed">
+            A collection of reporting, analysis, and editorial coverage on AI, startups,
+            agentic commerce, and the systems reshaping digital business.
+          </p>
+        </div>
+
+        <div class="w-full lg:w-auto">
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">search</span>
+            <input
+              type="text"
+              placeholder="Search articles..."
+              class="w-full lg:w-80 pl-12 pr-4 py-4 rounded-xl bg-white border border-brandBorder outline-none focus:border-brandOrange"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- CATEGORY CHIPS -->
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="archive.html" class="px-5 py-2 rounded-full bg-brandDeep text-white text-xs font-bold uppercase tracking-widest">All</a>
+        <a href="#ai" class="px-5 py-2 rounded-full bg-[#afeeef] text-brandDeep text-xs font-bold uppercase tracking-widest hover:bg-[#c4f1f1]">AI</a>
+        <a href="#startups" class="px-5 py-2 rounded-full bg-[#afeeef] text-brandDeep text-xs font-bold uppercase tracking-widest hover:bg-[#c4f1f1]">Startups</a>
+        <a href="#commerce" class="px-5 py-2 rounded-full bg-[#afeeef] text-brandDeep text-xs font-bold uppercase tracking-widest hover:bg-[#c4f1f1]">Agentic Commerce</a>
+        <a href="#opinion" class="px-5 py-2 rounded-full bg-[#afeeef] text-brandDeep text-xs font-bold uppercase tracking-widest hover:bg-[#c4f1f1]">Opinion</a>
+      </div>
+    </header>
+
+    <!-- FEATURED -->
+    <section class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+      <a href="articles/sovereign-intelligence.html" class="article-card md:col-span-8 block group">
+        <div class="relative overflow-hidden rounded-2xl aspect-[16/9]">
+          <img src="assets/images/sovereign-intelligence.jpg" alt="The Sovereign Intelligence" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-brandDeep/85 to-transparent"></div>
+          <div class="absolute bottom-8 left-8 right-8">
+            <span class="block text-[#ffb690] text-xs font-bold uppercase tracking-[0.2em] mb-3">AI • May 2026</span>
+            <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight">
+              The Sovereign Intelligence: Beyond Large Language Models
+            </h2>
+          </div>
+        </div>
+      </a>
+
+      <a href="articles/value-capital.html" class="article-card md:col-span-4 flex flex-col justify-between rounded-2xl bg-brandCard p-8 border-l-4 border-brandOrange hover:bg-brandCard2">
+        <div>
+          <span class="block text-brandOrange text-xs font-bold uppercase tracking-[0.2em] mb-4">Opinion</span>
+          <h3 class="text-2xl font-black text-brandDeep leading-tight mb-4">
+            Why Venture Capital is Transitioning to Value Capital
+          </h3>
+          <p class="text-sm text-brandMuted leading-relaxed">
+            A look at why capital is moving from narrative inflation toward measurable execution and durable outcomes.
+          </p>
+        </div>
+        <div class="mt-8 flex items-center justify-between">
+          <span class="text-xs text-gray-500 font-medium">April 12, 2026</span>
+          <span class="material-symbols-outlined text-brandOrange">arrow_forward</span>
+        </div>
+      </a>
+    </section>
+
+    <!-- ARTICLE GRID -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+
+      <!-- ARTICLE CARD START -->
+      <a href="articles/ai-cfo.html" class="article-card block group">
+        <div class="rounded-2xl overflow-hidden aspect-square mb-5 bg-brandCard">
+          <img src="assets/images/ai-cfo.jpg" alt="The 24/7 Shopper" class="w-full h-full object-cover" />
+        </div>
+        <span class="block text-brandOrange text-xs font-bold uppercase tracking-[0.2em] mb-2">Agentic Commerce</span>
+        <h3 class="text-xl font-black text-brandDeep leading-snug">
+          The 24/7 Shopper: When Your Personal AI Becomes Your CFO
+        </h3>
+        <p class="mt-3 text-sm text-brandMuted leading-relaxed">
+          How autonomous agents are beginning to handle household logistics, price negotiation, and purchasing decisions.
+        </p>
+      </a>
+      <!-- ARTICLE CARD END -->
+
+      <a href="articles/solopreneur-unicorn.html" class="article-card block group">
+        <div class="rounded-2xl overflow-hidden aspect-square mb-5 bg-brandCard">
+          <img src="assets/images/solopreneur-unicorn.jpg" alt="Solopreneur Unicorn" class="w-full h-full object-cover" />
+        </div>
+        <span class="block text-brandOrange text-xs font-bold uppercase tracking-[0.2em] mb-2">Startups</span>
+        <h3 class="text-xl font-black text-brandDeep leading-snug">
+          The Solopreneur Unicorn: Scaling to $1B with Zero Employees
+        </h3>
+        <p class="mt-3 text-sm text-brandMuted leading-relaxed">
+          The rise of the high-leverage founder operating on top of AI infrastructure and automated workflows.
+        </p>
+      </a>
+
+      <a href="articles/hardware-moat.html" class="article-card block group">
+        <div class="rounded-2xl overflow-hidden aspect-square mb-5 bg-brandCard">
+          <img src="assets/images/hardware-moat.jpg" alt="The Hardware Moat" class="w-full h-full object-cover" />
+        </div>
+        <span class="block text-brandOrange text-xs font-bold uppercase tracking-[0.2em] mb-2">AI</span>
+        <h3 class="text-xl font-black text-brandDeep leading-snug">
+          The Hardware Moat: Why Chips Are the New Geopolitics
+        </h3>
+        <p class="mt-3 text-sm text-brandMuted leading-relaxed">
+          The physical constraints of intelligence are reshaping global power, investment, and industrial policy.
+        </p>
+      </a>
+    </section>
+
+    <!-- LIST SECTION -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="space-y-10">
+        <a href="articles/ghost-data.html" class="flex gap-5 group">
+          <div class="w-24 h-24 rounded-xl overflow-hidden bg-brandCard flex-shrink-0">
+            <img src="assets/images/ghost-data.jpg" alt="Ghost Data" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-brandOrange">Opinion • Feb 2026</span>
+            <h4 class="mt-1 text-lg font-black text-brandDeep group-hover:text-brandOrange transition-colors">
+              The Ethics of Ghost Data
+            </h4>
+            <p class="mt-2 text-sm text-brandMuted">
+              Who owns your digital shadow when you are no longer the one generating it?
+            </p>
+          </div>
+        </a>
+
+        <a href="articles/embodied-ai.html" class="flex gap-5 group">
+          <div class="w-24 h-24 rounded-xl overflow-hidden bg-brandCard flex-shrink-0">
+            <img src="assets/images/embodied-ai.jpg" alt="Embodied AI" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-brandOrange">AI • Jan 2026</span>
+            <h4 class="mt-1 text-lg font-black text-brandDeep group-hover:text-brandOrange transition-colors">
+              Embodied AI: The Physical Turn
+            </h4>
+            <p class="mt-2 text-sm text-brandMuted">
+              Moving intelligence from interfaces into robotics, environments, and real-world action.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="space-y-10">
+        <a href="articles/death-of-checkout.html" class="flex gap-5 group">
+          <div class="w-24 h-24 rounded-xl overflow-hidden bg-brandCard flex-shrink-0">
+            <img src="assets/images/death-of-checkout.jpg" alt="Death of Checkout" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-brandOrange">Agentic Commerce • Dec 2025</span>
+            <h4 class="mt-1 text-lg font-black text-brandDeep group-hover:text-brandOrange transition-colors">
+              The Death of the Checkout Button
+            </h4>
+            <p class="mt-2 text-sm text-brandMuted">
+              Intent-based commerce is making traditional user flows look increasingly obsolete.
+            </p>
+          </div>
+        </a>
+
+        <a href="articles/remote-hybrid.html" class="flex gap-5 group">
+          <div class="w-24 h-24 rounded-xl overflow-hidden bg-brandCard flex-shrink-0">
+            <img src="assets/images/remote-hybrid.jpg" alt="Remote Hybrid Synthesis" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-brandOrange">Startups • Nov 2025</span>
+            <h4 class="mt-1 text-lg font-black text-brandDeep group-hover:text-brandOrange transition-colors">
+              The Remote Hybrid Synthesis
+            </h4>
+            <p class="mt-2 text-sm text-brandMuted">
+              Defining the culture of high-output distributed companies in a post-geographic market.
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- PAGINATION -->
+    <section class="mt-20 pt-10 border-t border-brandBorder flex items-center justify-between">
+      <button class="flex items-center gap-2 text-gray-500 font-bold hover:text-brandDeep">
+        <span class="material-symbols-outlined">arrow_back</span>
+        Previous
+      </button>
+
+      <div class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-lg bg-brandDeep text-white font-bold flex items-center justify-center">1</span>
+        <span class="w-10 h-10 rounded-lg text-gray-500 font-bold flex items-center justify-center">2</span>
+        <span class="w-10 h-10 rounded-lg text-gray-500 font-bold flex items-center justify-center">3</span>
+      </div>
+
+      <button class="flex items-center gap-2 text-brandDeep font-bold hover:text-brandOrange">
+        Next
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </button>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-brandDark text-[#ffdbca]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-xl font-black text-white">Today’s Tech</div>
+
+      <div class="flex flex-wrap justify-center gap-6 text-sm">
+        <a href="privacy.html" class="text-[#afeeef] hover:text-[#ffb690] underline underline-offset-4">Privacy Policy</a>
+        <a href="terms.html" class="text-[#afeeef] hover:text-[#ffb690] underline underline-offset-4">Terms of Service</a>
+        <a href="masthead.html" class="text-[#afeeef] hover:text-[#ffb690] underline underline-offset-4">Masthead</a>
+        <a href="contact.html" class="text-[#afeeef] hover:text-[#ffb690] underline underline-offset-4">Contact</a>
+      </div>
+
+      <div class="text-sm opacity-70">© 2026 Today’s Tech. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
